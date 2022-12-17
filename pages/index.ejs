@@ -1,0 +1,170 @@
+  <!DOCTYPE html>
+  <html lang="fr">
+  <head>
+    <link rel="icon" href="/assets/img/konet_logo192.png"/>
+<link rel="manifest" href="/assets/json/manifest.json"/>
+<link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com/">
+  <link rel="preconnect" href="https://cdn.glitch.global">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+  <title>Konet Anime - Accueil</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="author" content="Normi"/>
+  <meta name="creator" content="Normi"/>
+  <meta name="description" content=""/>
+  <meta name="keywords" content=""/>
+  </head>
+  <body>
+    <h2 style="color: grey">Ce site est en train d'être modifier!</h2>
+    <noscript><h2 style="color: grey">Le JavaScript n'est pas activé!</h2></noscript>
+<header>
+  <nav>
+  <a href="/">ACCUEIL</a>
+  <a href="#">INFOS</a>
+  <a href="#footer">AJOUTER</a>
+  <div id="indicator"></div>
+</nav>
+</header>
+  
+  <div class="wrapper">
+  <h2><strong>Raccourcis<span>( 2 )</span></strong></h2>
+	<h2><strong>Tout les animés<span>( <%= animes.length %> )</span></strong></h2>
+
+	<div class="cards">
+<% animes.forEach(function(anime){ %>
+	<a href="/anime/info/<%= anime.title_url %>">
+    	<figure class="card">
+
+			<img src="<%= anime.image %>" />
+
+			<figcaption><%= anime.title %></figcaption>
+
+        </figure></a>
+<% }); %>
+  </div>
+	<h2><strong>What's new?</strong></h2>
+
+	<div class="news">
+
+		<figure class="article">
+
+			<img src="" />
+
+			<figcaption>
+
+				<h3>New Item</h3>
+
+				<p>
+
+					In today’s update, two heads are better than one, and three heads are better than that, as the all-new Flockheart’s Gamble Arcana item for Ogre Magi makes its grand debut.
+
+				</p>
+
+			</figcaption>
+
+		</figure>
+
+		<figure class="article">
+
+			<img src="" />
+
+			<figcaption>
+
+				<h3>Update</h3>
+
+				<p>
+
+					Just in time for Lunar New Year and the Rat’s time in the cyclical place of honor, the Treasure of Unbound Majesty is now available.
+
+				</p>
+
+			</figcaption>
+
+		</figure>
+
+	</div>
+
+</div>
+<footer class="footer" id="footer">
+  <div class="footer__addr">
+    <h1 class="footer__logo"><img src="/assets/img/konet_banner.png"></h1>
+        
+    <h2>Contact</h2>
+    
+    <address>
+      Discord<br>
+          
+     <!-- <a class="footer__btn" href="">Envoyez un mail</a> -->
+    </address>
+  </div>
+  
+  <ul class="footer__nav">
+    <li class="nav__item">
+      <h2 class="nav__title">Réseaux</h2>
+
+      <ul class="nav__ul">
+        <li>
+          <a href="https://github.com/KonetOfficial">Github</a>
+        </li>
+
+        <li>
+          <a href="https://twitter.com/KonetOfficiel">Twitter</a>
+        </li>
+            
+        <li>
+          <a href="#">Alternative Ads</a>
+        </li>
+      </ul>
+    </li>
+    
+    <li class="nav__item nav__item--extra">
+      <h2 class="nav__title">Serveurs</h2>
+      
+      <ul class="nav__ul nav__ul--extra">
+        <li>
+          <a href="https://discord.gg/PKgAAeFyhX">Konet</a>
+        </li>
+        
+        <li>
+          <a href="#">Konet Drawing</a>
+        </li>
+        
+        <li>
+          <a href="#">Konet Code</a>
+        </li>
+        
+        <li>
+          <a href="#">Konet Games</a>
+        </li>
+      </ul>
+    </li>
+    
+    <li class="nav__item">
+      <h2 class="nav__title">Legal</h2>
+      
+      <ul class="nav__ul">
+        <li>
+          <a href="#">Privacy Policy</a>
+        </li>
+        
+        <li>
+          <a href="#">Terms of Use</a>
+        </li>
+        
+        <li>
+          <a href="#">Sitemap</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+  
+  <div class="legal">
+    <p>&copy; 2022 Konet. Tout droits réservé.</p>
+    
+    <div class="legal__links">
+      <span>Fait avec <span class="heart">♥</span> et pour le fun</span>
+    </div>
+  </div>
+</footer>
+  </body>
+  </html>
