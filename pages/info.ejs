@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= anime.title %></title>
+    <meta property="og:title" content="<%= anime.title %>"/>
+    <meta property="og:image" content="<%= anime.image %>"/>
+    <meta property="og:image:width" content="1000"/>
+    <meta property="og:image:height" content="1333"/>
+    <meta name="description" content="<%= anime.synopsis %>"/>
+    <meta property="og:description" content="<%= anime.synopsis %>"/>
+    <meta name="theme-color" content="#2C2CAC"/>
+    <meta name="og:type" content="website"/>
+    <meta property="og:site_name" content="Konet Anime"/>
+    <meta property="twitter:card" content="summary_large_image"/>
+    <meta property="twitter:image" content="<%= anime.image %>"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="/assets/css/style.css"/>
+    <link rel="icon" href="/assets/img/konet_logo192.png"/>
+    <link rel="manifest" href="/assets/json/manifest.json"/>
+  </head>
+  <body>
+    <div class="page">
+      <header>
+        <nav>
+  <a href="/">ACCUEIL</a>
+  <a href="#">INFOS</a>
+  <a href="#footer">AJOUTER</a>
+  <div id="indicator"></div>
+</nav>
+      </header>
+      <div class="anime">
+        <div class="info_head">
+          <img class="poster" src="<%= anime.image %>" alt="<%= anime.title_url %> image"/>
+          <h1 class="title"><%= anime.title %></h1>
+          <h2 class="jp"><%= anime.title_jp %></h2>
+        </div>
+        <div class="info">
+          <p class="synopsis"><%= anime.synopsis %></p>
+        </div>
+      </div>
+      <footer class="footer" id="footer">
+  <div class="footer__addr">
+    <h1 class="footer__logo"><img src="/assets/img/konet_banner.png"></h1>
+        
+    <h2>Contact</h2>
+    
+    <address>
+      Discord<br>
+          
+     <!-- <a class="footer__btn" href="">Envoyez un mail</a> -->
+    </address>
+  </div>
+  
+  <ul class="footer__nav">
+    <li class="nav__item">
+      <h2 class="nav__title">Réseaux</h2>
+
+      <ul class="nav__ul">
+        <li>
+          <a href="https://github.com/KonetOfficial">Github</a>
+        </li>
+
+        <li>
+          <a href="https://twitter.com/KonetOfficiel">Twitter</a>
+        </li>
+            
+        <li>
+          <a href="#">Alternative Ads</a>
+        </li>
+      </ul>
+    </li>
+    
+    <li class="nav__item nav__item--extra">
+      <h2 class="nav__title">Serveurs</h2>
+      
+      <ul class="nav__ul nav__ul--extra">
+        <li>
+          <a href="https://discord.gg/PKgAAeFyhX">Konet</a>
+        </li>
+        
+        <li>
+          <a href="#">Konet Drawing</a>
+        </li>
+        
+        <li>
+          <a href="#">Konet Code</a>
+        </li>
+        
+        <li>
+          <a href="#">Konet Games</a>
+        </li>
+      </ul>
+    </li>
+    
+    <li class="nav__item">
+      <h2 class="nav__title">Legal</h2>
+      
+      <ul class="nav__ul">
+        <li>
+          <a href="#">Privacy Policy</a>
+        </li>
+        
+        <li>
+          <a href="#">Terms of Use</a>
+        </li>
+        
+        <li>
+          <a href="#">Sitemap</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+  
+  <div class="legal">
+    <p>&copy; 2022 Konet. Tout droits réservé.</p>
+    
+    <div class="legal__links">
+      <span>Fait avec <span class="heart">♥</span> et pour le fun</span>
+    </div>
+  </div>
+</footer>
+    </div>
+  </body>
+</html>
