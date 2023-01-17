@@ -1,5 +1,5 @@
 const client = require("../mongo/connect.js");
-const dbAnime = client.db("yami-anime").collection("anime-data")
+const dbAnime = client.db("yami-anime") .collection("anime-data")
 async function routes(fastify, options) {
   fastify.get("/", async function (request, reply) {
    const have = await dbAnime.find().toArray()
@@ -11,7 +11,7 @@ fastify.get("/search", async function (request, reply) {
 const search = await request.query.query;
 
   if (search) {
-    const have = await dbAnime.find({ keywords: search }).toArray()
+    const have = await dbAnime.find({ keywords: search.toLowerCase() }).toArray()
     
     if (have.length > 0) {
       return reply.view('/pages/search.ejs', { results: have })
