@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Informations du site -->
+    <title></title>
+    <meta property="og:title" content="" />
+    <meta property="og:image" content="" />
+    <meta property="og:image:width" content="1000" />
+    <meta property="og:image:height" content="1333" />
+    <meta name="description" content="" />
+    <meta property="og:description" content="" />
+    <meta name="theme-color" content="#2C2CAC" />
+    <meta name="og:type" content="website" />
+    <meta property="og:site_name" content="Konet Anime" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Fichier importés -->
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <link rel="icon" href="https://ik.imagekit.io/konetcdn/konet_assets/konet-logo192.png" />
+    <link rel="manifest" href="/assets/json/manifest.json" />
+    <!-- Scripts -->
+    <script>
+      window.onload = (event) => {
+        console.log(
+          `Chargement de la page éffectué. requête GET à https://konet-anime.normioffi.repl.co/anime`
+        );
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const anime = urlParams.get("name");
+        getAnime(anime);
+      };
+
+      async function getAnime(name) {
+        const response = await fetch(
+          `https://konet-anime-db.normioffi.repl.co/anime?name=${name}`,
+          {
+            headers: {
+              Accept: "application/json",
+            },
+          }
+        );
+        const json = await response.json();
+        let anime = json[0];
+        console.log(anime);
+        var title = anime.title;
+
+        var titleEn = `<h2 class="en">${anime.title_en}</h2>`;
+        if (!anime.title_en) {
+          titleEn = "";
+        }
+        var titleJP = `<h2 class="jp">${anime.title_jp}</h2>`;
+        if (!anime.title_jp) {
+          titleJP = "";
+        }
+        var titleFr = `<h2 class="fr">${anime.title_fr}</h2>`;
+        if (!anime.title_fr) {
+          titleFr = "";
+        }
+
+        if (!title) {
+          if (!titleEn) {
+            title = titleEn;
+          } else if (!titleJP) {
+            title = titleJP;
+          } else if (!titleFr) {
+            title = titleFr;
+          } else {
+            title = "Aucun titre défini.";
+          }
+        }
+        var synopsis = anime.synopsis;
+        if (!synopsis) {
+          synopsis = "En attente de rédaction.";
+        }
+        /* var episodeCount = anime.episodeCount;
+          if(!episodeCount){ 
+              episodeCount = "Inconnu";
+          }
+          var episodeLength = anime.episodeLength;
+          if(!episodeLength){ 
+          	  episodeLength = "Inconnue";
+          } */
+        var startDate = anime.start;
+        if (!startDate) {
+          startDate = "00-00-0000";
+        }
+        var endDate = anime.end;
+        if (!endDate) {
+          endDate = "00-00-0000";
+        }
+        var image = anime.image;
+
+        if (synopsis.length > 700) {
+          var synopsis = synopsis.substring(0, 700) + "..";
+        }
+
+        document.querySelector("div[class='anime']").innerHTML = `
+   <div class="info_head">
+          <img class="poster" src="${image}" alt=" ${title} image"/>
+          <h1 class="title">${title}</h1>
+          ${titleJP}
+          ${titleEn}
+          ${titleFr}
+        </div>
+        <div class="info">
+          <p class="synopsis">${synopsis}</p>
+          <div class="fields">
+          <div class="field">
+          <h4 class="field-title">Date de début</h4>
+          <span class="field-content">${startDate}</span>
+        </div>
+            <div class="field">
+          <h4 class="field-title">Date de fin</h4>
+          <span class="field-content">${endDate}</span>
+        </div>
+            <div class="field">
+          <h4 class="field-title">Studio</h4>
+          <span class="field-content"></span>
+        </div>
+            <div class="field">
+          <h4 class="field-title">Genre</h4>
+          <span class="field-content"></span>
+        </div>
+          <div class="field">
+          <h4 class="field-title">Thème</h4>
+          <span class="field-content"></span>
+        </div>
+      </div>
+          </div>
+ `;
+      }
+    </script>
+  </head>
+  <body>
+      <noscript><h2 style="color: grey">
+        Le JavaScript n'est pas activé et aucune donnée ne peut-être affiché.
+      </h2></noscript>
+      <header>
+        <nav>
+          <a href="/">ACCUEIL</a>
+          <a href="#">INFOS</a>
+          <a href="#footer">DISCORD</a>
+          <div id="indicator"></div>
+        </nav>
+      </header>
+      <div class="anime">
+      </div>
+      <footer class="footer" id="footer">
+        <div class="footer__addr">
+          <h1 class="footer__logo">
+            <img src="/assets/img/konet_banner.png" height="170" width="350" />
+          </h1>
+
+          <h2>Contact</h2>
+
+          <address>
+            Discord<br />
+
+            <!-- <a class="footer__btn" href="">Envoyez un mail</a> -->
+          </address>
+        </div>
+
+        <ul class="footer__nav">
+          <li class="nav__item">
+            <h2 class="nav__title">Réseaux</h2>
+
+            <ul class="nav__ul">
+              <li>
+                <a href="https://github.com/KonetOfficial">Github</a>
+              </li>
+
+              <li>
+                <a href="https://twitter.com/KonetOfficiel">Twitter</a>
+              </li>
+
+              <li>
+                <a href="#">Alternative Ads</a>
+              </li>
+            </ul>
+          </li>
+
+          <li class="nav__item nav__item--extra">
+            <h2 class="nav__title">Serveurs</h2>
+
+            <ul class="nav__ul nav__ul--extra">
+              <li>
+                <a href="https://discord.gg/PKgAAeFyhX">Konet</a>
+              </li>
+
+              <li>
+                <a href="#">Konet Drawing</a>
+              </li>
+
+              <li>
+                <a href="#">Konet Code</a>
+              </li>
+
+              <li>
+                <a href="#">Konet Games</a>
+              </li>
+            </ul>
+          </li>
+
+          <li class="nav__item">
+            <h2 class="nav__title">Legal</h2>
+
+            <ul class="nav__ul">
+              <li>
+                <a href="#">Privacy Policy</a>
+              </li>
+
+              <li>
+                <a href="#">Terms of Use</a>
+              </li>
+
+              <li>
+                <a href="#">Sitemap</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+
+        <div class="legal">
+          <p>&copy; 2022 Konet. Tout droits réservé.</p>
+
+          <div class="legal__links">
+            <span>Fait avec <span class="heart">♥</span> et pour le fun</span>
+          </div>
+        </div>
+      </footer>
+  </body>
+</html>
