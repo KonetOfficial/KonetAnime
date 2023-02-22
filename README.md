@@ -9,9 +9,5 @@ Pour l'instant, MongoDB est la seule base de données que je me sert pour tout m
 # Hébergement code
 J'utilise Glitch pour héberger le site et le domaine, celui-ci est plus court que replit.
 
-# Framework
-Le framework auquel je me suis habitué est [Fastify](https://fastify.io), il est très utile pour les routes (comme /animes etc...), sinon je n'ai pas d'autre utilisation particulière.
-
 # Des idées ?
-Faites une suggestion sur le serveur Discord avec le tag Site.
-
+Vous pouvez nous faire part de vos suggestions sur le serveur Discord officiel dans le salon adéquat avec le tag site.
