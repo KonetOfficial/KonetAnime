@@ -1,0 +1,38 @@
+{
+  "short_name": "konetanime",
+  "name": "Konet Anime",
+  "icons": [
+    {
+      "src": "https://ik.imagekit.io/konetcdn/konet_assets/konet-logo.png",
+      "type": "image/png",
+      "sizes": "2048x2048"
+    },
+    {
+      "src": "https://ik.imagekit.io/konetcdn/konet_assets/konet-logo192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    }
+  ],
+  "id": "/",
+  "start_url": "/",
+  "background_color": "#24282f",
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "#24282f",
+  "description": "Konet Anime est un site pour obtenir les informations d'animés, tout aide est autorisée sur le github.",
+   "shortcuts": [
+    {
+      "name": "Info anime",
+      "short_name": "Informations",
+      "description": "Obtener des informations sur un animé.",
+      "url": "/anime?name=<anime>",
+      "icons": [{ "src": "https://ik.imagekit.io/konetcdn/konet_assets/konet-logo192.png", "sizes": "192x192" }]
+    },{
+      "name": "Info anime",
+      "short_name": "Informations",
+      "description": "Rechercher un animé.",
+      "url": "/animes/search?query=<anime>",
+      "icons": [{ "src": "/assets/img/konet_logo192.png", "sizes": "192x192" }]
+    }
+  ]
+}
