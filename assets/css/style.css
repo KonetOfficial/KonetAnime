@@ -1,5 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:700|Playfair+Display");
-@import url("https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Expletus+Sans&family=Atomic+Age&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Arimo&family=Atomic+Age&family=Do+Hyeon&family=Open+Sans:wght@300&display=swap");
 
 /* theme */
 :root {
@@ -18,7 +17,8 @@
 }
 body {
   background: #24282f;
-  font-family: 'Alegreya Sans';
+  font-family: "Open Sans", sans-serif;
+  color: var(--font-color);
 }
 div.page {
   box-sizing: border-box;
@@ -150,196 +150,29 @@ nav a:nth-child(3):hover ~ #indicator {
   
  .title {
 	text-align: center;
-  color: var(--font-color);
   font-size: 25px;
  }
-.jp {
+
+.en, .jp, .fr {
   text-align: center;
-  color: var(--font-color);
   font-size: 20px;
  }
   .synopsis {
-  color: var(--font-color);
   font-size: 20px;
  text-align: left;
   font-family: "Open Sans", cursive;
   }
-
-input,
-input[type="checkbox"] + label:before,
-select option,
-select {
-  width: 400px;
-  padding: 1em;
-  background-color: var(--back-third-color);
-  border: 1px solid #aaaaaa;
-  border-radius: 3px;
-  -webkit-transition: 0.35s ease-in-out;
-  -moz-transition: 0.35s ease-in-out;
-  -o-transition: 0.35s ease-in-out;
-  transition: 0.35s ease-in-out;
-  transition: all 0.35s ease-in-out;
+.fields {
+  display: flex;
+  justify-content: center;
 }
-input:focus {
-  outline: 0;
-  border-color: #bd8200;
-}
-input:focus + .input-icon i {
-  color: #f0a500;
-}
-input:focus + .input-icon:after {
-  border-right-color: #f0a500;
-}
-input[type="checkbox"] {
-  display: none;
-}
-input[type="checkbox"] + label {
-  position: relative;
-  display: block;
-  padding-left: 1.6em;
-}
-input[type="checkbox"] + label:before {
-  position: absolute;
-  top: 0.2em;
-  left: 0;
-  display: block;
-  width: 1em;
-  height: 1em;
-  padding: 0;
-  content: "";
-}
-input[type="checkbox"] + label:after {
-  position: absolute;
-  top: 0.45em;
-  left: 0.2em;
-  font-size: 0.8em;
-  color: #fff;
-  opacity: 0;
-  font-family: FontAwesome;
-  content: "\f00c";
-}
-input:checked + label:after {
-  opacity: 1;
-}
-input[type="text"] {
-  width: 200px
-}
-input[type="submit"] {
-  background-color: var(--btn-color)
-}
-input[type="submit"]:hover {
-  background-color: var(--btn-second-color)
-}
-select {
-  height: 3.4em;
-  line-height: 2;
-}
-select:first-of-type {
-  border-top-left-radius: 3px;
-  border-bottom-left-radius: 3px;
-}
-select:last-of-type {
-  border-top-right-radius: 3px;
-  border-bottom-right-radius: 3px;
-}
-select:focus,
-select:active {
-  outline: 0;
-}
-select option {
-  background-color: #f0a500;
-  color: #fff;
-}
-.input-group {
-  margin-bottom: 1em;
-  zoom: 1;
-}
-.input-group:before,
-.input-group:after {
-  content: "";
-  display: table;
-}
-.input-group:after {
-  clear: both;
-}
-.input-group-icon {
-  position: relative;
-}
-
-.input-group-icon .input-icon {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 3.4em;
-  height: 3.4em;
-  line-height: 3.4em;
+.field {
+  margin: 30px;
   text-align: center;
-  pointer-events: none;
 }
-.input-group-icon .input-icon:after {
-  position: absolute;
-  top: 0.6em;
-  bottom: 0.6em;
-  left: 3.4em;
-  display: block;
-  border-right: 1px solid #e5e5e5;
-  content: "";
-  -webkit-transition: 0.35s ease-in-out;
-  -moz-transition: 0.35s ease-in-out;
-  -o-transition: 0.35s ease-in-out;
-  transition: 0.35s ease-in-out;
-  transition: all 0.35s ease-in-out;
+.field h3 {
+  font-weight: bold;
 }
-.input-group-icon .input-icon i {
-  -webkit-transition: 0.35s ease-in-out;
-  -moz-transition: 0.35s ease-in-out;
-  -o-transition: 0.35s ease-in-out;
-  transition: 0.35s ease-in-out;
-  transition: all 0.35s ease-in-out;
-}
-.container {
-  width: 450px;
-  padding: 1em 3em 2em 3em;
-  margin: 0em auto;
-  background-color: var(--back-second-color);
-  color: var(--font-color);
-  border-radius: 4.2px;
-  box-shadow: 0px 3px 10px -2px rgba(0, 0, 0, 0.2);
-}
-.row {
-  zoom: 1;
-}
-.row:before,
-.row:after {
-  content: "";
-  display: table;
-}
-.row:after {
-  clear: both;
-}
-.col-half {
-  padding-right: 10px;
-  float: left;
-  width: 50%;
-}
-.col-half:last-of-type {
-  padding-right: 0;
-}
-.col-third {
-  padding-right: 10px;
-  float: left;
-  width: 33.33333333%;
-}
-.col-third:last-of-type {
-  padding-right: 0;
-}
-@media only screen and (max-width: 540px) {
-  .col-half {
-    width: 100%;
-    padding-right: 0;
-  }
-}
-
 /* Cards */
 .abs,
 h2:after,
@@ -393,10 +226,7 @@ h2 strong,
 h2 span {
   vertical-align: middle;
 }
-body {
-  background: #24282f;
-  font-family: 'Open Sans', sans-serif;
-}
+
 .wrapper {
   padding: 15px;
 }
@@ -687,124 +517,12 @@ body {
   
  .title {
    text-align: center;
-   color: var(--font-color);
    font-size: 20px
  }
-.jp {
-  text-align:center;
+.en, .jp, .fr  {
    font-size: 14.5px
    }
   .synopsis {
     font-size: 15px
    }
-}
-/* page: info: presentation div */
-div.presentation {
-  margin: 10vh auto;
-  min-width: 20vw;
-  max-width: 60vh;
-  min-height: 20vh;
-  top: 90px;
-  border-radius: 4px;
-  box-shadow: 0 15px 35px rgba(50, 50, 90, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);
-  transition: 0.6s ease;
-  background: var(--back-second-color);
-  text-align: center;
-  font-family: "Do Hyeon", sans-serif;
-  align-items: center;
-  font-size: 25px;
-  color: var(--font-color)
-}
-div.presentation-info {
-  margin: 10vh auto;
-  min-width: 20vw;
-  max-width: 600vh;
-  min-height: 20vh;
-  border-radius: 4px;
-  box-shadow: 0 15px 35px rgba(50, 50, 90, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);
-  transition: 0.6s ease;
-  background: var(--back-second-color);
-  text-align: center;
-  font-size: 20px;
-  font-family: "Open Sans", sans-serif;
-  color: var(--font-color)
-}
-img {
-  max-width: 100%;
-  max-height: 100%;
-}
-
-#episodes {
-  font-family: Arial, Helvetica, sans-serif;
-  border-collapse: collapse;
-  width: 50%;
-  
-}
-
-#episodes td, #episodes th {
-  border: 1px solid grey;
-  padding: 8px;
-}
-#episodes td {
-  background-color: var(--back-color)
-}
-
-#episodes tr:nth-child(even){background-color: grey;}
-
-#episodes tr a {
-  color: var(--link-color)
-}
-#episodes tr a:hover {
-  color: var(--link-hover-color);
-}
-
-#episodes th {
-  padding-top: 12px;
-  padding-bottom: 12px;
-  text-align: left;
-  background-color: var(--back-second-color);
-  color: var(--font-color);
-}
-.alert {
-  padding: 20px;
-  background-color: #f44336;
-  color: white;
-}
-
-.closebtn {
-  margin-left: 15px;
-  color: white;
-  font-weight: bold;
-  float: right;
-  font-size: 22px;
-  line-height: 20px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.closebtn:hover {
-  color: black;
-}
-/* device: mobile */
-   @media screen and (max-width: 768px) {
-     body {
-       background-image: none;
-       background-color: var(--back-color);
-     }
-     nav p, span {
-       display: none
-     }
-     div.presentation {
-       font-size: 18px
-     }
-     div.presentation-info {
-       font-size: 17px;
-     }
-     #episodes {
-       width: 100%;
-     }
-     input[type=text] {
-       width: 65px
-     }
-     
 }
