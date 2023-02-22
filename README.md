@@ -6,8 +6,8 @@ Ce projet est fait en HTML/CSS, le serveur est quant à lui fait avec JS, les pa
 
 # Base de données
 Pour l'instant, MongoDB est la seule base de données que je me sert pour tout mes projets.
-# Hébergement code / Nodejs
-J'utilise Replit pour l'hébergement du site avec nodejs et le code, github pour le code, et uptimerobot pour le ping (5min), si j'utilise ces options gratuites c'est que je n'est pas encore la possibilité d'utiliser mon argent de poche pour payer quoique ce soit.
+# Hébergement code
+J'utilise Glitch pour héberger le site et le domaine, celui-ci est plus court que replit.
 
 # Framework
 Le framework auquel je me suis habitué est [Fastify](https://fastify.io), il est très utile pour les routes (comme /animes etc...), sinon je n'ai pas d'autre utilisation particulière.
