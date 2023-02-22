@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <!-- urls importés -->
+    <link rel="preconnect" href="https://fonts.googleapis.com/" />
+    <link rel="preconnect" href="https://ik.imagekit.io/" />
+    <!-- styles importés -->
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <!-- Informations du site -->
+    <title>Konet Anime</title>
+    <meta name="og:title" content="Konet Anime" />
+    <meta
+      name="og:description"
+      content="Konet Anime est un site pour obtenir les informations d'animés, tout aide est autorisée sur le github."
+    />
+    <meta name="og:image" content="/assets/img/konet_logo.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Konet" />
+    <meta name="creator" content="Konet" />
+    <meta
+      name="description"
+      content="Konet Anime est un site pour obtenir les informations d'animés, tout aide est autorisée sur le github."
+    />
+    <meta name="keywords" content="Anime, Konet, Anime France" />
+    <link rel="icon" href="https://ik.imagekit.io/konetcdn/konet_assets/konet-logo192.png" />
+    <link rel="manifest" href="/assets/json/manifest.json" />
+    <!-- scripts -->
+    <script>
+      window.onload = (event) => {
+        console.log(
+          `Chargement de la page éffectué. requête GET à https://konet-anime.normioffi.repl.co/`
+        );
+        fetchData();
+      };
+      async function fetchData() {
+        let fragment = new DocumentFragment();
+
+        const response = await fetch(
+          `https://konet-anime-db.normioffi.repl.co/all`,
+          {
+            headers: {
+              Accept: "application/json",
+            },
+          }
+        );
+        const data = await response.json();
+        const arr = Array.from(data.animes);
+
+        let a;
+        arr.forEach((element, counter) => {
+          document.querySelector("span[class='counter']").innerHTML = `( ${counter} )`
+          document.querySelector(
+            "div[class='cards']"
+          ).innerHTML += `<a href="/anime.html?name=${element.title_url}">
+  <figure class="card">
+            <img src="${element.image}">
+
+            <figcaption>${element.title}</figcaption></figure>
+  </a>`;
+        });
+      }
+    </script>
+  </head>
+  <!-- corps du site -->
+  <body>
+    <!-- En-tête -->
+    <h2 style="color: grey">Ce site est en train d'être modifier!</h2>
+    <noscript><h2 style="color: grey">
+        Le JavaScript n'est pas activé et aucune donnée ne peut-être affiché.
+      </h2></noscript>
+    <header>
+      <nav>
+        <a href="/">ACCUEIL</a>
+        <a href="#">INFOS</a>
+        <a href="https://discord.gg/7UtGNgGRjA">DISCORD</a>
+        <div id="indicator"></div>
+      </nav>
+    </header>
+<!-- Corps -->
+    <div class="wrapper">
+      <h2>
+        <strong>Raccourcis<span>( 2 )</span></strong>
+      </h2>
+      <h2>
+        <strong>Tout les animés<span class="counter"></span></strong>
+      </h2>
+
+      <div class="cards">
+        <!--
+        <a href="">
+          <figure class="card">
+            <img src="" />
+
+            <figcaption></figcaption></figure
+        ></a> -->
+      </div>
+      <h2><strong>What's new?</strong></h2>
+
+      <div class="news">
+        <figure class="article">
+          <img src="" />
+
+          <figcaption>
+            <h3>New Item</h3>
+
+            <p>
+              In today’s update, two heads are better than one, and three heads
+              are better than that, as the all-new Flockheart’s Gamble Arcana
+              item for Ogre Magi makes its grand debut.
+            </p>
+          </figcaption>
+        </figure>
+
+        <figure class="article">
+          <img src="" />
+
+          <figcaption>
+            <h3>Update</h3>
+
+            <p>
+              Just in time for Lunar New Year and the Rat’s time in the cyclical
+              place of honor, the Treasure of Unbound Majesty is now available.
+            </p>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+    <!-- Pied -->
+    <footer class="footer" id="footer">
+      <div class="footer__addr">
+        <h1 class="footer__logo"><img src="https://ik.imagekit.io/konetcdn/konet_assets/konet-logo.png" height="100" width="100"/>ONET</h1>
+
+        <h2>Contact</h2>
+
+        <address>
+          Discord<br />
+
+          <!-- <a class="footer__btn" href="">Envoyez un mail</a> -->
+        </address>
+      </div>
+
+      <ul class="footer__nav">
+        <li class="nav__item">
+          <h2 class="nav__title">Réseaux</h2>
+
+          <ul class="nav__ul">
+            <li>
+              <a href="https://github.com/KonetOfficial">Github</a>
+            </li>
+
+            <li>
+              <a href="https://twitter.com/KonetOfficiel">Twitter</a>
+            </li>
+
+            <li>
+              <a href="#">Alternative Ads</a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="nav__item nav__item--extra">
+          <h2 class="nav__title">Serveurs</h2>
+
+          <ul class="nav__ul nav__ul--extra">
+            <li>
+              <a href="https://discord.gg/7UtGNgGRjA">Konet</a>
+            </li>
+
+            <li>
+              <a href="#">Konet Drawing</a>
+            </li>
+
+            <li>
+              <a href="#">Konet Code</a>
+            </li>
+
+            <li>
+              <a href="#">Konet Games</a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="nav__item">
+          <h2 class="nav__title">Legal</h2>
+
+          <ul class="nav__ul">
+            <li>
+              <a href="#">Privacy Policy</a>
+            </li>
+
+            <li>
+              <a href="#">Terms of Use</a>
+            </li>
+
+            <li>
+              <a href="#">Sitemap</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <div class="legal">
+        <p>&copy; 2022 Konet. Tout droits réservé.</p>
+
+        <div class="legal__links">
+          <span>Fait avec <span class="heart">♥</span> et pour le fun</span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
