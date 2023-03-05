@@ -11,7 +11,7 @@
     <meta name="og:title" content="Konet Anime" />
     <meta
       name="og:description"
-      content="Konet Anime est un site pour obtenir les informations d'animés, tout aide est autorisée sur le github."
+      content="Konet Anime est un site qui propose des informations sur les animés de tout type."
     />
     <meta name="og:image" content="/assets/img/konet_logo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -19,7 +19,7 @@
     <meta name="creator" content="Konet" />
     <meta
       name="description"
-      content="Konet Anime est un site pour obtenir les informations d'animés, tout aide est autorisée sur le github."
+      content="Konet Anime est un site qui propose des informations sur les animés de tout type."
     />
     <meta name="keywords" content="Anime, Konet, Anime France" />
     <link rel="icon" href="https://ik.imagekit.io/konetcdn/konet_assets/konet-logo192.png" />
@@ -28,9 +28,9 @@
     <script>
       window.onload = (event) => {
         console.log(
-          `Chargement de la page éffectué. requête GET à https://konet-anime.normioffi.repl.co/`
+          `Chargement de la page éffectué. requête GET à https://konet-anime-db.normioffi.repl.co/`
         );
-        fetchData();
+        fetchData().then(msg => console.log("Requête effectuée avec succès !")).catch(err => console.error("Une erreur est survenue lors de la requête: " + err));
       };
       async function fetchData() {
         let fragment = new DocumentFragment();
@@ -48,10 +48,15 @@
 
         let a;
         arr.forEach((element, counter) => {
-          document.querySelector("span[class='counter']").innerHTML = `( ${counter} )`
+          document.querySelector("span[class='counter']").innerHTML = counter + 1
           document.querySelector(
             "div[class='cards']"
-          ).innerHTML += `<a href="/anime.html?name=${element.title_url}">
+          ).innerHTML += `<figure>
+    <img src="${element.image}" alt="${element.title} image" width="300" height="400">
+   <figcaption><a href="/anime.html?name=${element.title_url}">${element.title}</a></figcaption>
+    
+</figure>`          
+          let res = `<a href="/anime.html?name=${element.title_url}">
   <figure class="card">
             <img src="${element.image}">
 
@@ -60,7 +65,7 @@
         });
       }
     </script>
-  </head>
+ </head>
   <!-- corps du site -->
   <body>
     <!-- En-tête -->
@@ -79,10 +84,10 @@
 <!-- Corps -->
     <div class="wrapper">
       <h2>
-        <strong>Raccourcis<span>( 2 )</span></strong>
+        <strong>Raccourcis <span>( 2 )</span></strong>
       </h2>
       <h2>
-        <strong>Tout les animés<span class="counter"></span></strong>
+        <strong>Tout les animés ( <span class="counter"></span> )</strong>
       </h2>
 
       <div class="cards">
