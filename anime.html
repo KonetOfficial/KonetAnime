@@ -39,7 +39,7 @@
           }
         );
         const json = await response.json();
-        let anime = json[0];
+        let anime = json;
         console.log(anime);
         var title = anime.title;
 
@@ -88,11 +88,20 @@
           endDate = "00-00-0000";
         }
         var image = anime.image;
-
-        if (synopsis.length > 700) {
-          var synopsis = synopsis.substring(0, 700) + "..";
+        
+        var theme = anime.theme;
+        if (theme < 0) {
+          theme = "..."
         }
-
+        
+        var genre = anime.genre;
+        if (genre < 0) {
+          genre = "..."
+        }
+        var studio = anime.studio;
+        if (!studio) {
+          studio = "..."
+        }
         document.querySelector("div[class='anime']").innerHTML = `
    <div class="info_head">
           <img class="poster" src="${image}" alt=" ${title} image"/>
@@ -114,15 +123,15 @@
         </div>
             <div class="field">
           <h4 class="field-title">Studio</h4>
-          <span class="field-content"></span>
+          <span class="field-content">${studio}</span>
         </div>
             <div class="field">
           <h4 class="field-title">Genre</h4>
-          <span class="field-content"></span>
+          <span class="field-content">${genre}</span>
         </div>
           <div class="field">
           <h4 class="field-title">Thème</h4>
-          <span class="field-content"></span>
+          <span class="field-content">${theme}</span>
         </div>
       </div>
           </div>
